@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Uniajc CV</title>
+
+        <link rel="stylesheet" href="estilos/Style.css"></link>
+        <link rel="stylesheet" href="estilos/Slider.css"></link>
+        <link rel="stylesheet" href="estilos/footer.css"></link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></link>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="javascript/slider.js"></script>
+
+    </h:head>
+
+    <h:body style="background: white">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">Uniajc CV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.xhtml">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h:form>
+<div class="row">
+  <div class="col"> <center>
+            </center>
+            <h2 class="titulo">Productos</h2>
+            <h:dataTable binding="#{table}" value="#{mostrarproductos.usersList()}" var="u" class="table talbe-striped table-hover table-bordered">
+
+                <h:column>
+                    <section class="portafolio">
+                        <div class="contenedor">
+                            <div class="galeria-port">
+                                <ul>    
+                                    <li class="list-group-item disabled" style="width: 200px"><h:outputText value="Codigo del productos"></h:outputText></li>
+                                    <li class="list-group-item disabled" style="width: 200px"><h:outputText value="#{u.id}"></h:outputText></li>
+                                    <li class="list-group-item disabled" style="width: 200px"><h:outputText value="#{u.nombre}"></h:outputText></li>
+                                    <li class="list-group-item disabled" style="width: 200px"><h:outputText value="#{u.descripcion}"></h:outputText></li>
+                                    <li class="list-group-item disabled" style="width: 200px"><h:outputText value="#{u.precio}"></h:outputText></li>
+                                    
+                                    </ul>
+                                <div class="imagen-port">
+                                    <img class="card-img-top" src="#{u.foto}" style="height: 400px; width: 400px; margin: auto" alt="Card image cap"></img>
+                                    <div class="hover-galeria">
+                                        <img src="img/icono1.png" alt=""></img>
+                                        <a><p><h:commandButton action="#{mostrarproductos.comprar(u.id)}" value="Comprar"></h:commandButton></p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </h:column>
+            </h:dataTable></div>
+</div>            
+        </h:form>
+
+
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h6>About</h6>
+                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec mattis est. Cras tellus nibh, consectetur sed volutpat quis, cursus at sem. Aliquam sollicitudin condimentum odio, in tristique libero volutpat sit amet. Cras ultricies tincidunt tortor eget vehicula. Quisque quis velit turpis. Curabitur porttitor, urna gravida vehicula efficitur, metus neque</p>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="http://scanfcode.com/about/">Acerca De</a></li>
+                            <li><a href="http://scanfcode.com/contact/">Contactos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr></hr>
+            </div>
+        </footer>
+    </h:body>
+</html>

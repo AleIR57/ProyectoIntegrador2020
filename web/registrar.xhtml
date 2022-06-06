@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Uniajc CV</title>
+        <link rel="stylesheet" href="estilos/login.css"></link>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
+
+    </h:head>
+
+    <h:body>
+
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">Uniajc CV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.xhtml">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card1" >
+                    <div class="card-header">
+                        <h3>Nuevo Usaurio</h3>
+
+                    </div>
+                    <div class="card-body" >
+                        <h:form enctype="multipart/form-data">
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 100px"><i class="fas fa-user"> Nombre</i></span>
+                                </div>
+                                <h:inputText class="form-control" value="#{adduser.nombre}" id="nombre-id" validatorMessage="Nombre requerido">
+                                    <f:validateRequired/>
+                                </h:inputText>
+                            </div>
+                            
+                            
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 100px"><i class="fas fa-user"> Foto</i></span>
+                                </div>
+                                <h:inputText class="form-control" value="#{adduser.foto}" id="fotodos-id" style="width: 500px">
+                                    <f:validateRequired/>
+                                </h:inputText>
+                            </div>
+                            
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 105px"><i class="fas"> Identificacion</i></span>
+                                </div>
+                                <h:inputText class="form-control" value="#{adduser.identificacion}" id="emaiil-id" validatorMessage="email requerido">
+                                    <f:validateRequired/>
+                                </h:inputText>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 100px"><i class="fas "> Direccion</i></span>
+                                </div>
+                                <h:inputText  class="form-control" value="#{adduser.direccion}" id="password-id" validatorMessage="Password requerido">
+                                    <f:validateRequired/>
+                                </h:inputText>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 100px"><i class="fas"> Email</i></span>
+                                </div>
+                                <h:inputText class="form-control" value="#{adduser.email}" id="gender-id" validatorMessage="Nombre requerido" >
+                                    <f:validateRequired/>
+                                </h:inputText>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 100px"><i class="fas fa-key"> Clave</i></span>
+                                </div>
+                                <h:inputSecret class="form-control" value="#{adduser.clave}" id="address-id" validatorMessage="Nombre requerido">
+                                    <f:validateRequired/>
+                                </h:inputSecret>>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="width: 100px"><i class="fas ">Rol</i></span>
+                                </div>
+                                <h:selectOneMenu value="#{adduser.roles}" validatorMessage="Rol requerido" class="form-control">
+                                    <f:selectItem itemValue="1" itemLabel="Administrador"/>
+                                    <f:selectItem itemValue="2" itemLabel="Comprador"/>
+                                    <f:selectItem itemValue="3" itemLabel="Vendedor"/>
+                                </h:selectOneMenu>
+                            </div>
+
+                            <div class="form-group">
+                                <h:commandButton action="#{adduser.crear()}" value="Crear" class="btn float-right login_btn"></h:commandButton>
+                            </div>
+                        </h:form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>

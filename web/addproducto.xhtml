@@ -1,0 +1,134 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Uniajc CV</title>
+        <link rel="stylesheet" href="estilos/addproducto.css"></link>
+        <link rel="stylesheet" href="estilos/mainprodu.css"></link>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
+
+    </h:head>
+
+    <h:body>
+
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">Uniajc CV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index_vendedor.xhtml">Volver <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Agregar Producto</h2>
+                    </div>
+                    <div class="card-body">
+                        <h:form>
+                            <div class="form-row m-b-55">
+                                <div class="name">Nombre</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                
+                                                <h:inputText class="input--style-5" value="#{addproducto.nombre}" id="nombre-id" validatorMessage="Nombre requerido" style="width: 200px">
+                                                    <f:validateRequired/>
+                                                </h:inputText>
+                                                <label class="label--desc">Nombre Producto</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            <div class="form-row m-b-55">
+                                <div class="name">ID</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                
+                                                <h:inputText class="input--style-5" value="#{addproducto.idCli}" id="email-id" validatorMessage="Nombre requerido" style="width: 200px">
+                                                    <f:validateRequired/>
+                                                </h:inputText>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Precio</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <h:inputText class="input--style-5" value="#{addproducto.precio}" id="precio-id" validatorMessage="Precio requerido" style="width: 510px">
+                                            <f:validateRequired/>
+                                        </h:inputText>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Foto</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <h:inputText class="input--style-5" value="#{addproducto.foto}" id="foto-id" validatorMessage="Foto requerido" style="width: 510px">
+                                            <f:validateRequired/>
+                                        </h:inputText>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row m-b-55">
+                                <div class="name">Numero en stock</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <h:inputText class="input--style-5" value="#{addproducto.sotck}" id="stock-id" validatorMessage="Descripcion requerido" style="width: 400px">
+                                                    <f:validateRequired/>
+                                                </h:inputText>
+                                                <label class="label--desc">Descripcion Del Producto</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Descripcion</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <h:inputText class="input--style-5" value="#{addproducto.descr}" id="IdUser-id" validatorMessage="Descripcion requerido" style="width: 400px">
+                                                    <f:validateRequired/>
+                                                </h:inputText>
+                                                <label class="label--desc">Descripcion Del Producto</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h:commandButton action="#{addproducto.crear()}" value="Añadir" class=" btn btn--radius-2 btn--red" ></h:commandButton>
+                               </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>

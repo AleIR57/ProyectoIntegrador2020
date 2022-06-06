@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Uniajc CV</title>
+
+        <link rel="stylesheet" href="estilos/Style.css"></link>
+        <link rel="stylesheet" href="estilos/Slider.css"></link>
+        <link rel="stylesheet" href="estilos/footer.css"></link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></link>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="javascript/slider.js"></script>
+
+    </h:head>
+
+    <h:body style="background: white">
+        
+        
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">Uniajc CV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.xhtml">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+       
+        <section class="ftco-appointment ftco-section img" style="background-image: url(images/bg_2.jpg); margin-top: 10px">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 pr-md-5">
+                        <div class="heading-section heading-section-white">
+                            <h2 class="mb-3">Quejas y Devoluciones.</h2>
+                            <p> En este formato prodas enviar quejas sobre el producto o pedir devolucion sobre tu dinero. 
+                                Prodas consultar todas las quejas o devuoluciones que pesdite despues de iniciar session.
+                            </p>
+                            <div class="row mt-md-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 half ftco-animate">
+                        <h2 class="mb-4">Consultas</h2>
+                            <h:form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h:outputLabel class="footer-links" value="Nombre del producto"></h:outputLabel>
+                                        <h:inputText value="#{mostrarproductos.nombre}" class=" form-control"></h:inputText>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h:outputLabel class="footer-links" value="cantida comprada"></h:outputLabel>
+                                        <h:inputText value="#{mostrarproductos.cantidad}" class=" form-control"></h:inputText>
+                                    </div>
+                                </div>  
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h:outputLabel class="footer-links" value="Precio pagado"></h:outputLabel>
+                                        <h:inputText value="#{mostrarproductos.precio}" class=" form-control"></h:inputText>
+                                    </div>
+                                </div>  
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h:outputLabel class="footer-links" value="Codigo de la venta"></h:outputLabel>
+                                        <h:inputText value="#{mostrarproductos.idventa}" class=" form-control"></h:inputText>
+                                    </div>
+                                </div>  
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h:outputLabel class="footer-links" value="Codigo del producto"></h:outputLabel>
+                                        <h:inputText value="#{mostrarproductos.id}" class=" form-control"></h:inputText>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <h:outputLabel class="footer-links" value="Razon de la devolucion"></h:outputLabel>
+                                        <h:inputTextarea cols="30" rows="7" class="form-control" value="#{mostrarproductos.descripcion}"></h:inputTextarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <h:commandButton class="btn btn-primary py-3 px-4" value="Enviar" action="#{mostrarproductos.crearreporte()}"></h:commandButton>
+                                    </div>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </h:body>
+</html>

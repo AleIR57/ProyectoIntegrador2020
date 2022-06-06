@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Uniajc CV</title>
+        <link rel="stylesheet" href="estilos/Style.css"></link>
+        <link rel="stylesheet" href="estilos/footer.css"></link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></link>
+
+    </h:head>
+
+    <h:body style="background: white">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">Uniajc CV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.xhtml">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <div class="card" style="width: 40rem; margin-left:25%;margin-bottom:5%;margin-top: 5px">
+            <img src="https://encolombia.com/wp-content/uploads/2018/05/Claves-Aumentar-Ventas.png" class="card-img-top" alt="..."></img>
+            <div class="card-body">
+                <h5 class="card-title">Productos Publicados.</h5>
+                <p class="card-text">Aqui podras consultar todo lo relacionado con usuarios de la pagina, solo se pueden elimar aquellos usuarios que no tienen registros en la base de datos.</p>
+                <!-- <a href="estadistica.php" class="btn btn-primary">Ver</a>-->
+            </div>
+        </div>
+
+        <h:form>
+            <h:dataTable class="table table-striped table-dark" binding="#{table}" value="#{mostrarusuarios.usersList()}" var="u">
+                <h:column>
+                    <f:facet name="header" >ID</f:facet>
+                    <h:outputText value="#{u.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Nombre</f:facet>
+                    <h:outputText value="#{u.nombre}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Identificacion</f:facet>
+                    <h:outputText value="#{u.identificacion}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Email</f:facet>
+                    <h:outputText value="#{u.email}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Clave</f:facet>
+                    <h:outputText value="#{u.clave}"/>
+                </h:column>
+                                <h:column>
+                    <f:facet name="header">Editar</f:facet>
+                    <h:commandButton action="#{mostrarusuarios.editar(u.id)}" value="Editar" class="btn btn-primary"></h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+    </h:body>
+</html>
